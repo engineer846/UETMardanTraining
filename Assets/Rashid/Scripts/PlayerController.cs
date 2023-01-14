@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow)){
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)){
             temprorayPosition = Player.transform.position;
             temprorayPosition.x += Time.deltaTime;
             MovePlayer();
