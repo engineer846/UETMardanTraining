@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Transform[] SpawnPoints;
 
     public int Score = 0;
+    int index = 0;
 
     public static GameManager instance;
     // Start is called before the first frame update
@@ -28,7 +29,13 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        int index = Random.Range(0, SpawnPoints.Length);
-        Instantiate(EnemyPrefab, SpawnPoints[index].position,SpawnPoints[index].rotation);
+        //int index = Random.Range(0, SpawnPoints.Length);
+        Instantiate(EnemyPrefab, SpawnPoints[index].position, SpawnPoints[index].rotation);
+        if (index < 2)
+            index++;
+        else
+        {
+            index = 0;
+        }
     }
 }
