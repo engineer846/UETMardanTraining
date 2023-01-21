@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5850122506599631372}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  someVar: 15
+  DestroyEffect: {fileID: 2113501541604035793, guid: db773599df8dff84b9d8a303b9328af9, type: 3}
 --- !u!54 &5850122506599631372
 Rigidbody:
   m_ObjectHideFlags: 0

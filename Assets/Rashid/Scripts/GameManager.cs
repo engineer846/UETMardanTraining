@@ -38,4 +38,14 @@ public class GameManager : MonoBehaviour
             index = 0;
         }
     }
+
+    public void GameOver()
+    {
+        print("Game Over");
+    }
+
+    public void GameWon()
+    {
+        print("Game Won");
+    }
 }

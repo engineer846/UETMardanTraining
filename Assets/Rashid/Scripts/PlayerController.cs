@@ -8,6 +8,12 @@ public class PlayerController : MonoBehaviour
     public GameObject Bullet;
     public Transform BulletSpawnPoint;
 
+    public float FireRate = 0.1f;
+    public bool isFiring = false;
+    public float NextFire = 0;
+
+    public int Health = 100;
+
     public float MoveSpeed = 1f;
     public float MinX, MaxX, MinZ, MaxZ;
     private Vector3 temprorayPosition;
@@ -20,6 +26,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButton(0) && NextFire < Time.time)
+        {
+            NextFire = Time.time + FireRate;
+            ShootBullet();
+        }
         //if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         //{
         //    temprorayPosition = Player.transform.position;
@@ -48,10 +59,6 @@ public class PlayerController : MonoBehaviour
         //    MovePlayer();
         //}
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShootBullet();
-        }
         this.transform.Translate(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * Time.deltaTime * MoveSpeed);
         temprorayPosition = Player.transform.position;
         MovePlayer();

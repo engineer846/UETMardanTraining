@@ -196,8 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1977465568621156116}
-  Bullet: {fileID: 5155709178130323005, guid: 82f8a19f3295c8b45a2ca34298e5329c, type: 3}
+  Bullet: {fileID: 5155709178130323005, guid: 5947feb76ae51bb49b7766becec29e90, type: 3}
   BulletSpawnPoint: {fileID: 3816350613260597024}
+  DestroyEffect: {fileID: 1685831096228734183, guid: 8bcd659de69b12647be89d0160c9df34, type: 3}
 --- !u!1 &3816350613260597025
 GameObject:
   m_ObjectHideFlags: 0
