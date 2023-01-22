@@ -1,11 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject EnemyPrefab;
     public Transform[] SpawnPoints;
+
+    //For UI
+    public Text ScoreText;
+    public Slider HealthSlider;
+
+    public GameObject PausePanel;
+    public GameObject GameWonPanel;
+    public GameObject GameFailedPanel;
+
+    public bool isGameWon = false;
+    public bool isGameOver = false;
+
 
     public int Score = 0;
     int index = 0;
@@ -16,14 +30,11 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         SpawnEnemy();
+        UpdateUIElement();
     }
 
     private void Update()
     {
-        //if(Score >= 10)
-        //{
-        //    print("Game Won!");
-        //}
     }
 
 
@@ -41,11 +52,39 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        print("Game Over");
+        Time.timeScale = 0;
+        GameFailedPanel.SetActive(true);
     }
 
     public void GameWon()
     {
-        print("Game Won");
+        Time.timeScale = 0;
+        GameWonPanel.SetActive(true);
+    }
+
+    public void UpdateUIElement()
+    {
+        ScoreText.text = Score.ToString();
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        PausePanel.SetActive(true);
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        PausePanel.SetActive(false);
+    }
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+    }
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }

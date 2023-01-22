@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
             //GameObject.Find("GameManager").GetComponent<GameManager>().SpawnEnemy();
             GameManager.instance.SpawnEnemy();
             GameManager.instance.Score++;
+            GameManager.instance.UpdateUIElement();
             if (GameManager.instance.Score >= 10)
             {
                 GameManager.instance.GameWon();
@@ -37,7 +38,8 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerController>().Health -= 10;
+            other.gameObject.GetComponent<PlayerController>().Health -= 3;
+            GameManager.instance.HealthSlider.value = other.gameObject.GetComponent<PlayerController>().Health;
             if (other.gameObject.GetComponent<PlayerController>().Health <= 0)
             {
                 GameManager.instance.GameOver();
