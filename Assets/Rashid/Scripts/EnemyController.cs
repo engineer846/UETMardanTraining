@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
         if(other.gameObject.tag == "Boundary")
         {
             GameManager.instance.SpawnEnemy();
+            GameManager.instance.Enemies.Remove(gameObject);
             Destroy(gameObject);
         }
     }

@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080e34d7f9f4dc14c8da624c288836a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletProp: {fileID: 11400000, guid: 4b314eb42f68f0c4aa75a87f8591a80b, type: 2}
   Speed: 10
   DestroyEffect: {fileID: 2113501541604035793, guid: db773599df8dff84b9d8a303b9328af9, type: 3}
 --- !u!54 &5850122506599631372

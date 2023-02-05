@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float Speed = 100;
+    public BulletScriptableObject BulletProp;
+    private float Speed;
     public GameObject DestroyEffect;
     // Update is called once per frame
 
     private void Start()
     {
+        Speed = BulletProp.Speed;
         Destroy(gameObject, 3);
 
     }
@@ -32,6 +34,8 @@ public class Bullet : MonoBehaviour
                 GameManager.instance.GameWon();
             }
             Instantiate(other.gameObject.GetComponent<EnemyController>().DestroyEffect, other.transform.position, Quaternion.identity);
+
+            GameManager.instance.Enemies.Remove(other.gameObject);
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }

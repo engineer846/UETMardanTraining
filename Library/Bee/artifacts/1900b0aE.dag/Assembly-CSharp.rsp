@@ -360,8 +360,11 @@
 "Assets/Rashid/Scripts/Bullet.cs"
 "Assets/Rashid/Scripts/EnemyController.cs"
 "Assets/Rashid/Scripts/GameManager.cs"
+"Assets/Rashid/Scripts/Loading.cs"
 "Assets/Rashid/Scripts/MainMenuManager.cs"
 "Assets/Rashid/Scripts/PlayerController.cs"
+"Assets/Rashid/Scripts/Raycasting.cs"
+"Assets/Rashid/Scripts/ScriptableObjects/BulletScriptableObject.cs"
 -langversion:9.0
 
 /deterministic

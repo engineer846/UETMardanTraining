@@ -467,11 +467,14 @@ MonoBehaviour:
   - {fileID: 980021016}
   - {fileID: 347556245}
   - {fileID: 1571218511}
+  Enemies: []
   ScoreText: {fileID: 989842445}
   HealthSlider: {fileID: 1943285851}
   PausePanel: {fileID: 796386144}
   GameWonPanel: {fileID: 1785087707}
   GameFailedPanel: {fileID: 1619066412}
+  isGameWon: 0
+  isGameOver: 0
   Score: 0
 --- !u!1 &251952937
 GameObject:

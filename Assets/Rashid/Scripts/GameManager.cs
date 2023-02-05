@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject EnemyPrefab;
     public Transform[] SpawnPoints;
 
+    public List<GameObject> Enemies = new List<GameObject>();
+
     //For UI
     public Text ScoreText;
     public Slider HealthSlider;
@@ -30,18 +32,25 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         SpawnEnemy();
+        SpawnEnemy();
         UpdateUIElement();
     }
 
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
     }
-
 
     public void SpawnEnemy()
     {
         //int index = Random.Range(0, SpawnPoints.Length);
-        Instantiate(EnemyPrefab, SpawnPoints[index].position, SpawnPoints[index].rotation);
+        GameObject Enemy = Instantiate(EnemyPrefab, SpawnPoints[index].position, SpawnPoints[index].rotation);
+        Enemies.Add(Enemy);
+        print("Enemy Name: " + Enemies[0].name);
         if (index < 2)
             index++;
         else
